@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cristian Godoy Angel | Full Stack Developer</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -152,7 +153,7 @@
                 <div class="project-card">
                     <img src="assets/logica.jpg" alt="Logica.net" class="project-img">
                     <div class="project-content">
-                        <h3 class="project-title">Logica.net</h3>
+                        <h3 class="project-title">Logica</h3>
                         <p class="project-description">Plataforma educativa para el aprendizaje de lógica de programación.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">ASP.NET</span>
@@ -184,16 +185,94 @@
                 </div>
             </section>
 
+            <section class="certifications-section">
+                <a href="https://www.linkedin.com/in/cristian-godoy-angel/details/certifications/" target="_blank" class="certification-container">
+                    <div class="certification-header">
+                        <h2><i class="fas fa-certificate"></i> Certificaciones</h2>
+                        <small class="view-more">Ver todas en LinkedIn <i class="fas fa-external-link-alt"></i></small>
+                    </div>
+                    <div class="certification-carousel">
+                        <div class="certification-track">
+                            <div class="certification-item">
+                                <i class="fas fa-award"></i>
+                                <span>Formación Java y Spring Framework - Oracle Next Education</span>
+                                <small>Alura Latam - 2024</small>
+                            </div>
+                            <div class="certification-item">
+                                <i class="fas fa-award"></i>
+                                <span>Formación Java con Orientación a Objetos</span>
+                                <small>Alura Latam - 2024</small>
+                            </div>
+                                                        <div class="certification-item">
+                                <i class="fas fa-award"></i>
+                                <span>Oracle Cloud Infrastructure - ONE</span>
+                                <small>Alura Latam - 2024</small>
+                            </div>
+                            <div class="certification-item">
+                                <i class="fas fa-award"></i>
+                                <span>Certificación Linux Professional</span>
+                                <small>Hola Mundo - 2024</small>
+                            </div>
+                            <div class="certification-item">
+                                <i class="fas fa-award"></i>
+                                <span>Modelado de Bases de Datos</span>
+                                <small>Alura Latam - 2024</small>
+                            </div>
+                            <div class="certification-item">
+                                <i class="fas fa-award"></i>
+                                <span>Curso de PHP y MySQL</span>
+                                <small>LinkedIn - 2024</small>
+                            </div>
+                            <div class="certification-item">
+                                <i class="fas fa-award"></i>
+                                <span>Formación Inteligencia Artificial y Java</span>
+                                <small>Alura Latam - 2024</small>
+                            </div>
+                            <div class="certification-item">
+                                <i class="fas fa-award"></i>
+                                <span>Programación con JavaScript</span>
+                                <small>Alura Latam - 2024</small>
+                            </div>
+                            <div class="certification-item">
+                                <i class="fas fa-award"></i>
+                                <span>ChatGPT: IA Generativa</span>
+                                <small>Alura Latam - 2024</small>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </section>
+
             <section class="contact-section">
                 <h2>¿Interesado en trabajar juntos?</h2>
                 <div class="social-links">
                     <a href="https://github.com/cristiangodoyangel" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/cristian-godoy-angel/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:cristiangodoyangel@gmail.com" class="social-link" target="_blank"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto: cristiangodoyangel@gmail.com" class="social-link" target="_blank"><i class="fas fa-envelope"></i></a>
                     
                 </div>
             </section>
         </div>
     </div>
+    <script>
+        // Animación de certificaciones
+        function checkCertifications() {
+            const items = document.querySelectorAll('.certification-list li');
+            items.forEach((item, index) => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (itemTop < windowHeight * 0.9) {
+                    setTimeout(() => {
+                        item.classList.add('show');
+                    }, index * 100);
+                }
+            });
+        }
+
+        // Ejecutar al cargar y al hacer scroll
+        window.addEventListener('load', checkCertifications);
+        window.addEventListener('scroll', checkCertifications);
+    </script>
 </body>
 </html>

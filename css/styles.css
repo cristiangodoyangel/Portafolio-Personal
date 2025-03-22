@@ -10,9 +10,10 @@
     --achievement-silver: #a0a0a0;
     --achievement-gold: #ffd700;
     --achievement-platinum: #b1b1b1;
-    --neon-shadow: 0 0 10px #64ffda;;
+    --neon-shadow: 0 0 10px #64ffda;
     --card-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
                    5px 5px 15px rgba(0, 0, 0, 0.3);
+    --neon-shadow-intense: 0 0 20px #64ffda;
 }
 
 @keyframes gradientBG {
@@ -48,6 +49,37 @@
     }
     100% {
         background-position: 50px 50px;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 5 - 2rem * 5));
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -151,7 +183,7 @@ body::before {
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    text-shadow: var(--neon-shadow);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .name-title h2 {
@@ -336,12 +368,9 @@ body::before {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
     position: relative;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
 }
 
 .project-card::before {
@@ -354,13 +383,17 @@ body::before {
     background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
 }
 
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
 .project-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
-    margin-top: 1rem;
-    transition: transform 0.3s ease;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .project-content {
@@ -412,6 +445,108 @@ body::before {
 
 .project-link:hover {
     color: var(--accent-primary);
+}
+
+/* Certifications Section */
+.certifications-section {
+    grid-column: span 12;
+    margin-top: 3rem;
+}
+
+.certification-container {
+    display: block;
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    padding: 2rem;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.certification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--accent-primary);
+}
+
+.certification-header h2 {
+    color: var(--accent-primary);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.view-more {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.certification-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.certification-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 80s linear infinite;
+    width: calc(300px * 20 + 2rem * 20);
+}
+
+.certification-track:hover {
+    animation-play-state: paused;
+}
+
+.certification-item {
+    min-width: 300px;
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+                5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+}
+
+.certification-item i {
+    color: var(--accent-primary);
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.certification-item span {
+    display: block;
+    color: var(--text-primary);
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.certification-item small {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 10 - 2rem * 10));
+    }
 }
 
 /* Contact Section */
