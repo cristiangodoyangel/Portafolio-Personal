@@ -7,6 +7,8 @@ Portfolio personal que muestra mis habilidades y proyectos como desarrollador Fu
 - HTML5
 - CSS3 (Animaciones, Grid, Flexbox)
 - JavaScript
+- Tailwind CSS
+- Bootstrap
 - Firebase Hosting
 
 ## 🎮 Características
