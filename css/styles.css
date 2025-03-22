@@ -475,8 +475,12 @@ body::before {
 
 .certification-header h2 {
     color: var(--accent-primary);
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     margin: 0;
+}
+
+.certification-header i {
+    display: none;
 }
 
 .view-more {
