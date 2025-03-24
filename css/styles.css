@@ -90,32 +90,26 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
-    min-height: 100vh;
+    background-color: #15172e !important;
+    color: #e0e0e0 !important;
+    font-family: Arial, sans-serif;
+    background-image: 
+    linear-gradient(rgba(21, 23, 46, 0.95), rgba(21, 23, 46, 0.6)),
+    url('../assets/back.svg');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
     position: relative;
     overflow-x: hidden;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        linear-gradient(transparent 0%, rgba(125, 95, 255, 0.05) 100%),
-        linear-gradient(90deg, transparent 0%, rgba(100, 255, 218, 0.05) 100%),
-        linear-gradient(0deg, rgba(125, 95, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(100, 255, 218, 0.1) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 25px 25px, 25px 25px;
-    animation: gridMove 20s linear infinite;
-    opacity: 0.3;
-    z-index: -1;
-}
+    animation: platinumShine 20s ease-in-out infinite;
+    /* animation: slowMove 20s ease-in-out infinite; */
+  }
+  
+  body::after {
+    content: none;
+  }
+  
 
 .container {
     max-width: 1400px;
